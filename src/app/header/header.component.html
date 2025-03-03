@@ -1,18 +1,32 @@
 <div class="header-container">
-  <div class="left-side">
+  <div class="left-side" (click)="redirectToDashboard()" [class.clickable]="!isLoginPage">
     <span class="brand-name">Client<span class="cursive">Flow</span></span>
     <div class="subheading">
       <span>by</span>
-      <img src="https://thewealthmosaic.s3.amazonaws.com/media/Logo_Cognicor_1.png" alt="Cognicor Logo" class="cognicor-logo">
+      <img src="https://thewealthmosaic.s3.amazonaws.com/media/Logo_Cognicor_1.png" 
+           alt="Cognicor Logo" 
+           class="cognicor-logo">
     </div>
   </div>
   <div class="right-side">
-    <a href="/dashboard" class="dashboard-link">ClientFlow</a>
-    <a href="/settings" class="settings-link">
-      <img src="https://static.vecteezy.com/system/resources/previews/000/422/697/original/vector-settings-icon.jpg" alt="Settings" class="settings-icon">
+    <a routerLink="/dashboard" class="dashboard-link">ClientFlow</a>
+    <a routerLink="/settings" class="settings-link">
+      <img src="https://static.vecteezy.com/system/resources/previews/000/422/697/original/vector-settings-icon.jpg" 
+           alt="Settings" 
+           class="settings-icon">
     </a>
-    <a href="/profile" class="profile-link">
-      <img src="https://wallpapers.com/images/hd/default-user-profile-icon-lemo857tj1b3io21.png" alt="Profile" class="profile-pic">
+    <a routerLink="/profile" class="profile-link">
+      <img src="https://wallpapers.com/images/hd/default-user-profile-icon-lemo857tj1b3io21.png" 
+           alt="Profile" 
+           class="profile-pic">
     </a>
+    <!-- Dark mode toggle button -->
+    <button class="theme-toggle-btn" (click)="toggleTheme()">
+      <img [src]="isDarkMode ? 
+                 'https://static-00.iconduck.com/assets.00/sun-icon-2048x2048-q9y4y4t6.png' : 
+                 'https://static-00.iconduck.com/assets.00/moon-icon-512x512-fm9crgpt.png'" 
+           alt="Toggle Theme">
+    </button>
   </div>
 </div>
+<div class="header-separator"></div>

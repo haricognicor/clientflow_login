@@ -1,1 +1,43 @@
-<p>client-add works!</p>
+<div class="client-add-container">
+    <h2>Add New Client</h2>
+  
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Client Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter client name" />
+        <span class="error" *ngIf="clientForm.get('name')?.invalid && clientForm.get('name')?.touched">
+          Name is required.
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="Enter email" />
+        <span class="error" *ngIf="clientForm.get('email')?.invalid && clientForm.get('email')?.touched">
+          Valid email is required.
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" type="text" formControlName="phone" placeholder="Enter phone number" />
+        <span class="error" *ngIf="clientForm.get('phone')?.invalid && clientForm.get('phone')?.touched">
+          Enter a valid 10-digit phone number.
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" formControlName="address" placeholder="Enter address"></textarea>
+        <span class="error" *ngIf="clientForm.get('address')?.invalid && clientForm.get('address')?.touched">
+          Address is required.
+        </span>
+      </div>
+  
+      <div class="button-group">
+        <button type="submit" [disabled]="clientForm.invalid">Save</button>
+        <button type="button" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

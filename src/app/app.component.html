@@ -1,2 +1,18 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header></app-header> <!-- Keep the header always visible -->
+
+<div class="app-container" *ngIf="!isLoginPage()"> 
+  <aside class="sidebar">
+    <ul>
+      <li routerLink="/dashboard">Dashboard</li>
+      <li routerLink="/clients">Clients</li>
+      <li routerLink="/tasks">Tasks</li>
+      <li routerLink="/documents">Documents</li>
+      <li routerLink="/reports">Reports</li>
+      <li routerLink="/settings">Settings</li>
+    </ul>
+  </aside>
+</div>
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>

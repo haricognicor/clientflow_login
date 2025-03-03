@@ -1,0 +1,36 @@
+/* Ensure the whole app takes full height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Layout container */
+  .app-container {
+    display: flex;
+    height: calc(100vh - 60px); /* Adjust height considering the header */
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 220px;
+    background: #f4f4f4;
+    padding: 15px;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hide sidebar when not present */
+  .sidebar.hidden {
+    display: none;
+  }
+  
+  /* Main content area */
+  .content {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+  }
+  

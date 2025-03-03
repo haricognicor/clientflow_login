@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module'; // Import the routing module
-
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // ✅ Import this
+import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TasksComponent } from './tasks/tasks.component';
@@ -24,9 +25,12 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule // Add routing module
+    AppRoutingModule,
+    FormsModule, // ✅ Add FormsModule for template-driven forms (optional)
+    ReactiveFormsModule,
+    CommonModule // ✅ Add this for formGroup support
   ],
   providers: [],
-  bootstrap: [AppComponent] // Bootstraps AppComponent
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

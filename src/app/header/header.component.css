@@ -1,47 +1,92 @@
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: white;
-  }
-  
-  .left-side .brand-name {
-    font-size: 36px;
-    
-  }
-  
-  .left-side .cursive {
-    font-family: 'Brush Script MT';
-  font-style: italic;
-  }
-  
-  .left-side .subheading {
-    font-family: 'Brush Script MT';
-  font-style: italic;
-    display: flex;
-    align-items: center;
-    margin-top: 0px;
-  }
-  
-  .left-side .subheading span {
-    margin-right: 10px;
-    font-size: 14px;
-  }
-  
-  .left-side .cognicor-logo {
-    width: 100px;
-    height: auto;
-  }
-  
-  .right-side a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #000;
-  }
-  
-  .settings-icon,
-  .profile-pic {
-    width: 24px;
-    height: 24px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--header-bg);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.left-side .brand-name {
+  font-size: 36px;
+}
+
+.left-side .cursive {
+  font-family: 'Brush Script MT', cursive;
+}
+
+.left-side .subheading {
+  font-family: 'Brush Script MT', cursive;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.left-side .subheading span {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.left-side .cognicor-logo {
+  width: 100px;
+  height: auto;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+.right-side a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.settings-icon,
+.profile-pic {
+  width: 24px;
+  height: 24px;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.theme-toggle-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Separator */
+.header-separator {
+  width: 100%;
+  height: 2px;
+  background-color: var(--separator-color);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+}
+
+/* 🔥 Light Mode (Default) */
+:root {
+  --header-bg: white;
+  --text-color: black;
+  --separator-color: #ccc;
+}
+
+/* 🔥 Dark Mode */
+.dark-mode {
+  --header-bg: #222 !important; /* Force apply */
+  --text-color: white !important;
+  --separator-color: #666 !important;
+}
+
+/* Apply colors globally */
+body, html {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
