@@ -1,0 +1,52 @@
+<div class="login-wrapper">
+    <img src="https://thewealthmosaic.s3.amazonaws.com/media/Logo_Cognicor_1.png" alt="Cognicor Logo" class="login-logo">
+    <div class="login-container">
+      <h2>Welcome</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            [(ngModel)]="username" 
+            required 
+            placeholder="Enter username">
+          @if (usernameError) {
+            <p class="username-error">{{ usernameError }}</p>
+          }
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            [(ngModel)]="password" 
+            required 
+            placeholder="Enter password">
+          @if (passwordError) {
+            <p class="password-error">{{ passwordError }}</p>
+          }
+        </div>
+        <div class="form-group">
+          <label for="captcha">CAPTCHA</label>
+          <p class="captcha-question">{{ captchaQuestion }}</p>
+          <input 
+            type="text" 
+            id="captcha" 
+            name="captcha" 
+            [(ngModel)]="captcha" 
+            required 
+            placeholder="Enter CAPTCHA code">
+          @if (captchaError) {
+            <p class="captcha-error">{{ captchaError }}</p>
+          }
+        </div>
+        <button type="submit" class="sign-in-btn">SIGN IN</button>
+      </form>
+      @if (errorMessage) {
+        <p class="global-error">{{ errorMessage }}</p>
+      }
+    </div>
+  </div>
