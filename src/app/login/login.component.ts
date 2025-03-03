@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
   imports: [FormsModule], // For ngModel
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
